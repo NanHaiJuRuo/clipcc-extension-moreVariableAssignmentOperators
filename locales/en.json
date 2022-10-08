@@ -2,12 +2,12 @@
 "nhjr.moreVariableAssignmentOperators.name": "更多变量赋值符",
 "nhjr.moreVariableAssignmentOperators.description": "= += -= *= /= %=",
 
-"nhjr.moreVariableAssignmentOperators.menu.=":"=","moreVariableAssignmentOperators.menu.+=":"+=",
-"nhjr.moreVariableAssignmentOperators.menu.-=":"-=","moreVariableAssignmentOperators.menu.*=":"*=",
-"nhjr.moreVariableAssignmentOperators.menu./=":"/=","moreVariableAssignmentOperators.menu.%=":"%=",
+"nhjr.moreVariableAssignmentOperators.menu.=":"=","nhjr.moreVariableAssignmentOperators.menu.+=":"+=",
+"nhjr.moreVariableAssignmentOperators.menu.-=":"-=","nhjr.moreVariableAssignmentOperators.menu.*=":"*=",
+"nhjr.moreVariableAssignmentOperators.menu./=":"/=","nhjr.moreVariableAssignmentOperators.menu.%=":"%=",
 
-"nhjr.moreVariableAssignmentOperators.menu.":"","moreVariableAssignmentOperators.menu.Number":"Number",
-"nhjr.moreVariableAssignmentOperators.menu.String":"String","moreVariableAssignmentOperators.menu.Boolean":"Boolean",
+"nhjr.moreVariableAssignmentOperators.menu.":"","nhjr.moreVariableAssignmentOperators.menu.Number":"Number",
+"nhjr.moreVariableAssignmentOperators.menu.String":"String","nhjr.moreVariableAssignmentOperators.menu.Boolean":"Boolean",
 
 "nhjr.moreVariableAssignmentOperators": "更多变量赋值符",
 "nhjr.moreVariableAssignmentOperators.setVar":"set variable[VARID][OPERATOR][IN_TYPE]([VALUE])",
