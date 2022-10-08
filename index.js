@@ -69,7 +69,7 @@ setList(util,ID,IN_ITEM,OPERATOR,IN_TYPE,VALUE){
     var Variable=variables[ID];
     var Length=Variable.value.length
     if(IN_ITEM=='last') var item= Length
-    else if(IN_ITEM=='random') var item= Math.round(Math.random()*(Length-1)+1)
+    else if(IN_ITEM=='random') var item= Math.round(Math.random()*(Length-1))
     else{
         var num= Number(IN_ITEM);
         if(num===NaN) return;
