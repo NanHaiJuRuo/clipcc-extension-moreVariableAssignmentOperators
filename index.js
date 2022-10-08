@@ -5,7 +5,7 @@ const VM = api.getVmInstance();
 const AssignmentOperators=['=','+=','-=','*=','/=','%='];
 const inTypeMenu_list=['','Number','String','Boolean'];
 
-var catId = 'nhjr.moreVariableAssignmentOperators';
+const catId = 'nhjr.more_var_assignment_operators';
 
 class ExampleExtension extends Extension {
 VarMenu_getSpriteVars(target,TYPE,in_vars){

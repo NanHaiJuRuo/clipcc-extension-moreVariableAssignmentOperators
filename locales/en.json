@@ -1,15 +1,15 @@
 {
-"nhjr.moreVariableAssignmentOperators.name": "更多变量赋值符",
-"nhjr.moreVariableAssignmentOperators.description": "= += -= *= /= %=",
+"nhjr.more_var_assignment_operators.name": "更多变量赋值符",
+"nhjr.more_var_assignment_operators.description": "= += -= *= /= %=",
 
-"nhjr.moreVariableAssignmentOperators.menu.=":"=","nhjr.moreVariableAssignmentOperators.menu.+=":"+=",
-"nhjr.moreVariableAssignmentOperators.menu.-=":"-=","nhjr.moreVariableAssignmentOperators.menu.*=":"*=",
-"nhjr.moreVariableAssignmentOperators.menu./=":"/=","nhjr.moreVariableAssignmentOperators.menu.%=":"%=",
+"nhjr.more_var_assignment_operators.menu.=":"=","nhjr.more_var_assignment_operators.menu.+=":"+=",
+"nhjr.more_var_assignment_operators.menu.-=":"-=","nhjr.more_var_assignment_operators.menu.*=":"*=",
+"nhjr.more_var_assignment_operators.menu./=":"/=","nhjr.more_var_assignment_operators.menu.%=":"%=",
 
-"nhjr.moreVariableAssignmentOperators.menu.":"","nhjr.moreVariableAssignmentOperators.menu.Number":"Number",
-"nhjr.moreVariableAssignmentOperators.menu.String":"String","nhjr.moreVariableAssignmentOperators.menu.Boolean":"Boolean",
+"nhjr.more_var_assignment_operators.menu.":"","nhjr.more_var_assignment_operators.menu.Number":"Number",
+"nhjr.more_var_assignment_operators.menu.String":"String","nhjr.more_var_assignment_operators.menu.Boolean":"Boolean",
 
-"nhjr.moreVariableAssignmentOperators": "更多变量赋值符",
-"nhjr.moreVariableAssignmentOperators.setVar":"set variable[VARID][OPERATOR][IN_TYPE]([VALUE])",
-"nhjr.moreVariableAssignmentOperators.setList":"set list[VARID]item[ITEM][OPERATOR][IN_TYPE]([VALUE])"
+"nhjr.more_var_assignment_operators": "更多变量赋值符",
+"nhjr.more_var_assignment_operators.setVar":"set variable[VARID][OPERATOR][IN_TYPE]([VALUE])",
+"nhjr.more_var_assignment_operators.setList":"set list[VARID]item[ITEM][OPERATOR][IN_TYPE]([VALUE])"
 }
