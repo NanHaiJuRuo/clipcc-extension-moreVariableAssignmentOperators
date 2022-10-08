@@ -1,15 +1,15 @@
 {
-"moreVariableAssignmentOperators.name": "更多变量赋值符",
-"moreVariableAssignmentOperators.description": "= += -= *= /= %=",
+"nhjr.moreVariableAssignmentOperators.name": "更多变量赋值符",
+"nhjr.moreVariableAssignmentOperators.description": "= += -= *= /= %=",
 
-"moreVariableAssignmentOperators.menu.=":"=","moreVariableAssignmentOperators.menu.+=":"+=",
-"moreVariableAssignmentOperators.menu.-=":"-=","moreVariableAssignmentOperators.menu.*=":"*=",
-"moreVariableAssignmentOperators.menu./=":"/=","moreVariableAssignmentOperators.menu.%=":"%=",
+"nhjr.moreVariableAssignmentOperators.menu.=":"=","moreVariableAssignmentOperators.menu.+=":"+=",
+"nhjr.moreVariableAssignmentOperators.menu.-=":"-=","moreVariableAssignmentOperators.menu.*=":"*=",
+"nhjr.moreVariableAssignmentOperators.menu./=":"/=","moreVariableAssignmentOperators.menu.%=":"%=",
 
-"moreVariableAssignmentOperators.menu.":"","moreVariableAssignmentOperators.menu.Number":"Number",
-"moreVariableAssignmentOperators.menu.String":"String","moreVariableAssignmentOperators.menu.Boolean":"Boolean",
+"nhjr.moreVariableAssignmentOperators.menu.":"","moreVariableAssignmentOperators.menu.Number":"Number",
+"nhjr.moreVariableAssignmentOperators.menu.String":"String","moreVariableAssignmentOperators.menu.Boolean":"Boolean",
 
-"moreVariableAssignmentOperators": "更多变量赋值符",
-"moreVariableAssignmentOperators.setVar":"set variable[VARID][OPERATOR][IN_TYPE]([VALUE])",
-"moreVariableAssignmentOperators.setList":"set list[VARID]item[ITEM][OPERATOR][IN_TYPE]([VALUE])"
+"nhjr.moreVariableAssignmentOperators": "更多变量赋值符",
+"nhjr.moreVariableAssignmentOperators.setVar":"set variable[VARID][OPERATOR][IN_TYPE]([VALUE])",
+"nhjr.moreVariableAssignmentOperators.setList":"set list[VARID]item[ITEM][OPERATOR][IN_TYPE]([VALUE])"
 }

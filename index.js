@@ -5,6 +5,7 @@ const VM = api.getVmInstance();
 const AssignmentOperators=['=','+=','-=','*=','/=','%='];
 const inTypeMenu_list=['','Number','String','Boolean'];
 
+var catId = 'nhjr.moreVariableAssignmentOperators';
 
 class ExampleExtension extends Extension {
 VarMenu_getSpriteVars(target,TYPE,in_vars){
@@ -36,10 +37,10 @@ makeMenus(block,menus){
     return menu;
 }
 AssignmentOperatorsMenu(){
-    return this.makeMenus('moreVariableAssignmentOperators',AssignmentOperators)
+    return this.makeMenus(catId,AssignmentOperators)
 }
 inTypeMenu(){
-    return this.makeMenus('moreVariableAssignmentOperators',inTypeMenu_list)
+    return this.makeMenus(catId,inTypeMenu_list)
 }
 
 
@@ -85,7 +86,6 @@ setList(util,ID,IN_ITEM,OPERATOR,IN_TYPE,VALUE){
 
 
 adB(in_opc,in_type,in_Func,in_param){
-    var catId = 'moreVariableAssignmentOperators';
     var opc = catId +'.'+ in_opc ;
     api.addBlock({
         opcode: opc,
@@ -101,8 +101,8 @@ adB(in_opc,in_type,in_Func,in_param){
 
 onInit() {
 api.addCategory({
-    categoryId: 'moreVariableAssignmentOperators', 
-    messageId: 'moreVariableAssignmentOperators',
+    categoryId: catId, 
+    messageId: catId,
     color: '#ed7600'
 });
 const adB=this.adB;
