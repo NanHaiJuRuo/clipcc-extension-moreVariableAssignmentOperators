@@ -1,7 +1,7 @@
 {
   "name": "clipcc-extension-moreVariableAssignmentOperators",
   "version": "1.0.0",
-  "description": "Connect more string!",
+  "description": "= += -= *= /= %=",
   "main": "index.js",
   "scripts": {
     "build": "rimraf ./build && mkdirp build && rimraf ./dist && mkdirp dist && webpack --bail",
