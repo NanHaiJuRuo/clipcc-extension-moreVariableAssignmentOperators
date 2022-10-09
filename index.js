@@ -54,6 +54,7 @@ ScratchBoolean(VALUE){
 setVar(util,ID,OPERATOR,IN_TYPE,VALUE){
     /* ↓ 此处已有运算符合规检测，可以不在源头检测。*/
     if (!AssignmentOperators.includes(OPERATOR) || !inTypeMenu_list.includes(IN_TYPE)) return;
+    const ScratchBoolean=this.ScratchBoolean;
 
     var variables=util.target.variables;
     if(!variables.hasOwnProperty(ID)){
@@ -65,6 +66,7 @@ setVar(util,ID,OPERATOR,IN_TYPE,VALUE){
 setList(util,ID,IN_ITEM,OPERATOR,IN_TYPE,VALUE){
     /* ↓ 此处已有运算符合规检测，可以不在源头检测。*/
     if (!AssignmentOperators.includes(OPERATOR) || !inTypeMenu_list.includes(IN_TYPE)) return;
+    const ScratchBoolean=this.ScratchBoolean;
 
     var target=util.target
     var variables=target.variables;
@@ -113,7 +115,6 @@ api.addCategory({
     color: '#ed7600'
 });
 const adB=this.adB;
-const ScratchBoolean=this.ScratchBoolean;
 
 adB('readme',tBT.REPORTER,()=>
 '免责声明！！！\nlanguage: zh-cn\n若您看不懂一下内容，不建议使用该扩展，因为这很可能毁了作品！！！\n该作品仅供便捷操作，若遭遇变量内容变成 number 类型的 NaN 或 Infinity 或 -Infinity ，请自行判断处理以防止毁作品！！！\n'
