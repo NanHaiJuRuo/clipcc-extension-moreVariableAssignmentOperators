@@ -3,7 +3,7 @@ const tBT=type.BlockType;
 const tPT=type.ParameterType;
 const VM = api.getVmInstance();
 const AssignmentOperators=['=','+=','-=','*=','/=','%='];
-const inTypeMenu_list=['','Number','String','Boolean'];
+const inTypeMenu_list=['','Number','String','Boolean','ScratchBoolean'];
 
 const catId = 'nhjr.more_var_assignment_operators';
 
@@ -41,6 +41,13 @@ AssignmentOperatorsMenu(){
 }
 inTypeMenu(){
     return this.makeMenus(catId,inTypeMenu_list)
+}
+
+ScratchBoolean(VALUE){
+    if (typeof(VALUE)=='string'){
+        if (/^[\-]?[\d]+(?:\.[\d]*)?$/.test(VALUE)) {return Boolean(Number(VALUE))}
+        return !(["false",""].includes(VALUE))
+    };return Boolean(VALUE);
 }
 
 
@@ -106,6 +113,11 @@ api.addCategory({
     color: '#ed7600'
 });
 const adB=this.adB;
+const ScratchBoolean=this.ScratchBoolean;
+
+adB('readme',tBT.REPORTER,()=>
+'免责声明！！！\nlanguage: zh-cn\n若您看不懂一下内容，不建议使用该扩展，因为这很可能毁了作品！！！\n该作品仅供便捷操作，若遭遇变量内容变成 number 类型的 NaN 或 Infinity 或 -Infinity ，请自行判断处理以防止毁作品！！！\n'
+)
 
 adB('setVar',tBT.COMMAND,
     (a,util)=>this.setVar(util,a.VARID,a.OPERATOR,a.IN_TYPE,a.VALUE)

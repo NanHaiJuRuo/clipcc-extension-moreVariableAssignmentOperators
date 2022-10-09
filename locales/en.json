@@ -1,6 +1,7 @@
 {
 "nhjr.more_var_assignment_operators.name": "更多变量赋值符",
 "nhjr.more_var_assignment_operators.description": "= += -= *= /= %=",
+"nhjr.more_var_assignment_operators.readme": "（必看！！！）免责声明点此查看",
 
 "nhjr.more_var_assignment_operators.menu.=":"=","nhjr.more_var_assignment_operators.menu.+=":"+=",
 "nhjr.more_var_assignment_operators.menu.-=":"-=","nhjr.more_var_assignment_operators.menu.*=":"*=",
@@ -8,6 +9,7 @@
 
 "nhjr.more_var_assignment_operators.menu.":"","nhjr.more_var_assignment_operators.menu.Number":"Number",
 "nhjr.more_var_assignment_operators.menu.String":"String","nhjr.more_var_assignment_operators.menu.Boolean":"Boolean",
+"nhjr.more_var_assignment_operators.menu.ScratchBoolean":"ScratchBoolean",
 
 "nhjr.more_var_assignment_operators": "更多变量赋值符",
 "nhjr.more_var_assignment_operators.setVar":"set variable[VARID][OPERATOR][IN_TYPE]([VALUE])",
