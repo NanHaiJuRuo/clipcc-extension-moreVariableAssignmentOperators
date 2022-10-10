@@ -7,7 +7,9 @@ const inTypeMenu_list=['','Number','String','Boolean','ScratchBoolean'];
 
 const catId = 'nhjr.more_var_assignment_operators';
 
-class ExampleExtension extends Extension {
+var variable_NaN_fix_mode=true;
+
+class E extends Extension {
 VarMenu_getSpriteVars(target,TYPE,in_vars){
     var export_vars = in_vars;
     var Vars = target.variables
@@ -50,6 +52,8 @@ ScratchBoolean(VALUE){
     };return Boolean(VALUE);
 }
 
+VarIsNaN(VALUE){return [NaN,Infinity,-Infinity].includes(VALUE)}
+
 
 setVar(util,ID,OPERATOR,IN_TYPE,VALUE){
     /* ↓ 此处已有运算符合规检测，可以不在源头检测。*/
@@ -62,6 +66,9 @@ setVar(util,ID,OPERATOR,IN_TYPE,VALUE){
     }
     if(!variables.hasOwnProperty(ID) || variables[ID].type!='') return;
     eval(`variables[ID].value${OPERATOR+IN_TYPE}(VALUE)`)
+    if(variable_NaN_fix_mode && this.VarIsNaN(variables[ID].value)){
+        variables[ID].value +='' /*转为字符串*/
+    }
 }
 setList(util,ID,IN_ITEM,OPERATOR,IN_TYPE,VALUE){
     /* ↓ 此处已有运算符合规检测，可以不在源头检测。*/
@@ -89,6 +96,9 @@ setList(util,ID,IN_ITEM,OPERATOR,IN_TYPE,VALUE){
     }
 
     eval(`Variable.value[item]${OPERATOR+IN_TYPE}(VALUE)`);
+    if(variable_NaN_fix_mode && this.VarIsNaN(Variable.value[item])){
+        Variable.value[item] +='' /*转为字符串*/
+    }
     Variable._monitorUpToDate = false
 }
 
@@ -116,9 +126,6 @@ api.addCategory({
 });
 const adB=this.adB;
 
-adB('readme',tBT.REPORTER,()=>
-'免责声明！！！\nlanguage: zh-cn\n若您看不懂一下内容，不建议使用该扩展，因为这很可能毁了作品！！！\n该作品仅供便捷操作，若遭遇变量内容变成 number 类型的 NaN 或 Infinity 或 -Infinity ，请自行判断处理以防止毁作品！！！\n'
-)
 
 adB('setVar',tBT.COMMAND,
     (a,util)=>this.setVar(util,a.VARID,a.OPERATOR,a.IN_TYPE,a.VALUE)
@@ -165,7 +172,20 @@ adB('setList',tBT.COMMAND,
         }
     }
 );
+adB('setVar_NaN_fixMode',tBT.COMMAND,
+    a =>{
+        variable_NaN_fix_mode= this.ScratchBoolean(a.VALUE)
+    },{
+        VALUE:{
+            type: tPT.STRING,
+            default: 'true',
+            menu: this.makeMenus('nhjr.more_var_assignment_operators.setVar_NaN_fixMode',['true','false'])
+        }
+    }
+);
+adB('isVar_NaN_fixMode',tBT.BOOLEAN,() =>variable_NaN_fix_mode
+);
 }
 onUninit(){
     api.removeCategory('moreVariableAssignmentOperators');
-}}module.exports = ExampleExtension;
+}}module.exports = E;

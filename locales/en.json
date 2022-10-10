@@ -1,7 +1,6 @@
 {
 "nhjr.more_var_assignment_operators.name": "更多变量赋值符",
 "nhjr.more_var_assignment_operators.description": "= += -= *= /= %=",
-"nhjr.more_var_assignment_operators.readme": "（必看！！！）免责声明点此查看",
 
 "nhjr.more_var_assignment_operators.menu.=":"=","nhjr.more_var_assignment_operators.menu.+=":"+=",
 "nhjr.more_var_assignment_operators.menu.-=":"-=","nhjr.more_var_assignment_operators.menu.*=":"*=",
@@ -13,5 +12,9 @@
 
 "nhjr.more_var_assignment_operators": "更多变量赋值符",
 "nhjr.more_var_assignment_operators.setVar":"set variable[VARID][OPERATOR][IN_TYPE]([VALUE])",
-"nhjr.more_var_assignment_operators.setList":"set list[VARID]item[ITEM][OPERATOR][IN_TYPE]([VALUE])"
+"nhjr.more_var_assignment_operators.setList":"set list[VARID]item[ITEM][OPERATOR][IN_TYPE]([VALUE])",
+"nhjr.more_var_assignment_operators.setVar_NaN_fixMode":"variable NaN fix mode set [VALUE]",
+"nhjr.more_var_assignment_operators.setVar_NaN_fixMode.menu.true":"true",
+"nhjr.more_var_assignment_operators.setVar_NaN_fixMode.menu.false":"⚠⚠⚠ false",
+"nhjr.more_var_assignment_operators.isVar_NaN_fixMode":"is variable NaN fix mode"
 }
