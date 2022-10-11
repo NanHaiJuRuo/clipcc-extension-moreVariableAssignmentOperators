@@ -45,11 +45,16 @@ inTypeMenu(){
     return this.makeMenus(catId,inTypeMenu_list)
 }
 
-ScratchBoolean(VALUE){
-    if (typeof(VALUE)=='string'){
-        if (/^[\-]?[\d]+(?:\.[\d]*)?$/.test(VALUE)) {return Boolean(Number(VALUE))}
-        return !(["false",""].includes(VALUE))
-    };return Boolean(VALUE);
+ScratchBoolean(value){/* 改自clipcc-vm/src/util/cast.js */
+    if (typeof value === 'string') {
+        if ((value === '') ||
+            (value === '0') ||
+            (value.toLowerCase() === 'false')) {
+            return false;
+        }
+        return true;
+    }
+    return Boolean(value);
 }
 
 VarIsNaN(VALUE){return [NaN,Infinity,-Infinity].includes(VALUE)}
