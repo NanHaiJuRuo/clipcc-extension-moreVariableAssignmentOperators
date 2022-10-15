@@ -7,7 +7,7 @@ const inTypeMenu_list= ['','Number','String','Boolean','ScratchBoolean'];
 
 const catId= 'nhjr.more_var_assignment_operators';
 
-var variable_NaN_fix_mode=true;
+var variable_NaN_fix_mode= true;
 
 module.exports= class E extends Extension {
     VarMenu_getSpriteVars(target,TYPE,in_vars){
@@ -25,7 +25,7 @@ module.exports= class E extends Extension {
         var MENU= this.VarMenu_getSpriteVars(VM.editingTarget,TYPE,{});
         if(!VM.editingTarget.isStage) MENU= this.VarMenu_getSpriteVars(VM.runtime.targets[0],TYPE,MENU);
         var export_menu= Object.entries(MENU);
-        if(export_menu==[]) export_menu= [['','']];
+        if(export_menu.length<1) export_menu= [['','']];
         return export_menu
     }
 
@@ -62,7 +62,7 @@ module.exports= class E extends Extension {
         const ScratchBoolean= this.ScratchBoolean;
         var VAR= IN_VAR;
         eval(`VAR${OPERATOR+IN_TYPE}(VALUE)`);
-        if(variable_NaN_fix_mode && [NaN,Infinity,-Infinity].includes(VAR)){
+        if(variable_NaN_fix_mode && typeof(VAR)=='number' && !Number.isFinite(VAR)){
             VAR +='' /*转为字符串*/
         }
         return VAR
@@ -73,10 +73,15 @@ module.exports= class E extends Extension {
 
         var variables=util.target.variables;
         if(!variables.hasOwnProperty(ID)){
-            variables=VM.runtime.targets[0].variables
+            variables= VM.runtime.targets[0].variables
         }
         if(!variables.hasOwnProperty(ID) || variables[ID].type!='') return;
-        variables[ID].value = this.setValueFixNaN(variables[ID].value, OPERATOR,IN_TYPE,VALUE)
+
+        if(variable_NaN_fix_mode) variables[ID].value = this.setValueFixNaN(variables[ID].value, OPERATOR,IN_TYPE,VALUE)
+        else{
+            const ScratchBoolean= this.ScratchBoolean;
+            eval(`variables[ID].value${OPERATOR+IN_TYPE}(VALUE)`)
+        }
     }
     setList(util,ID,IN_ITEM,OPERATOR,IN_TYPE,VALUE){
         /* ↓ 此处已有运算符合规检测，可以不在源头检测。*/
@@ -101,15 +106,21 @@ module.exports= class E extends Extension {
             if(0<num<=Length) var item= num-1
             else return;
         }
-        Variable.value[item] = this.setValueFixNaN(Variable.value[item], OPERATOR,IN_TYPE,VALUE);
+
+        if(variable_NaN_fix_mode) Variable.value[item] = this.setValueFixNaN(Variable.value[item], OPERATOR,IN_TYPE,VALUE)
+        else{
+            const ScratchBoolean= this.ScratchBoolean;
+            eval(`Variable.value[item]${OPERATOR+IN_TYPE}(VALUE)`)
+        }
         Variable._monitorUpToDate = false;
     }
 
 
     addBlocks(LIST){
+        console.log(LIST);
         for(const i in LIST){
-            var [in_opc,in_type,in_Func,in_param]= LIST[i];
-            var opc= catId +'.'+ in_opc ;
+            const [in_opc,in_type,in_Func,in_param]= LIST[i];
+            const opc= catId +'.'+ in_opc ;
             api.addBlock({
                 opcode: opc,
                 type: in_type,
