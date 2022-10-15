@@ -1,13 +1,11 @@
+const catId= 'nhjr.more_var_assignment_operators';
 const {api, type, Extension}= require('clipcc-extension');
 const tBT= type.BlockType;
 const tPT= type.ParameterType;
 const VM= api.getVmInstance();
 const AssignmentOperators= ['=','+=','-=','*=','/=','%='];
-const inTypeMenu_list= ['','Number','String','Boolean','ScratchBoolean'];
-
-const catId= 'nhjr.more_var_assignment_operators';
-
-var variable_NaN_fix_mode= true;
+const inTypeMenu_list= ['','Number','String','ScratchBoolean'];
+/*var variable_NaN_fix_mode= true;*/
 
 module.exports= class E extends Extension {
     VarMenu_getSpriteVars(target,TYPE,in_vars){
@@ -62,7 +60,7 @@ module.exports= class E extends Extension {
         const ScratchBoolean= this.ScratchBoolean;
         var VAR= IN_VAR;
         eval(`VAR${OPERATOR+IN_TYPE}(VALUE)`);
-        if(variable_NaN_fix_mode && typeof(VAR)=='number' && !Number.isFinite(VAR)){
+        if(/*variable_NaN_fix_mode &&*/ typeof(VAR)=='number' && !Number.isFinite(VAR)){
             VAR +='' /*转为字符串*/
         }
         return VAR
@@ -77,11 +75,11 @@ module.exports= class E extends Extension {
         }
         if(!variables.hasOwnProperty(ID) || variables[ID].type!='') return;
 
-        if(variable_NaN_fix_mode) variables[ID].value = this.setValueFixNaN(variables[ID].value, OPERATOR,IN_TYPE,VALUE)
-        else{
+        /*if(variable_NaN_fix_mode)*/ variables[ID].value = this.setValueFixNaN(variables[ID].value, OPERATOR,IN_TYPE,VALUE)
+        /*else{
             const ScratchBoolean= this.ScratchBoolean;
             eval(`variables[ID].value${OPERATOR+IN_TYPE}(VALUE)`)
-        }
+        }*/
     }
     setList(util,ID,IN_ITEM,OPERATOR,IN_TYPE,VALUE){
         /* ↓ 此处已有运算符合规检测，可以不在源头检测。*/
@@ -107,11 +105,11 @@ module.exports= class E extends Extension {
             else return;
         }
 
-        if(variable_NaN_fix_mode) Variable.value[item] = this.setValueFixNaN(Variable.value[item], OPERATOR,IN_TYPE,VALUE)
-        else{
+        /*if(variable_NaN_fix_mode)*/ Variable.value[item] = this.setValueFixNaN(Variable.value[item], OPERATOR,IN_TYPE,VALUE)
+        /*else{
             const ScratchBoolean= this.ScratchBoolean;
             eval(`Variable.value[item]${OPERATOR+IN_TYPE}(VALUE)`)
-        }
+        }*/
         Variable._monitorUpToDate = false;
     }
 
@@ -188,7 +186,7 @@ module.exports= class E extends Extension {
                         default: '0',
                     }
                 }
-            ],[
+            ]/*,[
                 'setVar_NaN_fixMode',tBT.COMMAND,
                 a =>{
                     variable_NaN_fix_mode= this.ScratchBoolean(a.VALUE)
@@ -201,7 +199,7 @@ module.exports= class E extends Extension {
                 }
             ],[
                 'isVar_NaN_fixMode',tBT.BOOLEAN, ()=> variable_NaN_fix_mode
-            ]
+            ]*/
         ])
     }
     onUninit(){ api.removeCategory(catId) }

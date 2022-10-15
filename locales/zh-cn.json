@@ -1,0 +1,6 @@
+{
+"nhjr.more_var_assignment_operators.name":"更多变量赋值符",
+"nhjr.more_var_assignment_operators": "更多变量赋值符",
+"nhjr.more_var_assignment_operators.setVar":"设置变量[VARID][OPERATOR][IN_TYPE]([VALUE])",
+"nhjr.more_var_assignment_operators.setList":"设置列表[VARID]的第[ITEM]项[OPERATOR][IN_TYPE]([VALUE])"
+}

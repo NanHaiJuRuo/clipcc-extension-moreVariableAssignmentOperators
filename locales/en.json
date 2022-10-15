@@ -1,5 +1,5 @@
 {
-"nhjr.more_var_assignment_operators.name": "更多变量赋值符",
+"nhjr.more_var_assignment_operators.name": "more variable assignment operators",
 "nhjr.more_var_assignment_operators.description": "= += -= *= /= %=",
 
 "nhjr.more_var_assignment_operators.menu.=":"=","nhjr.more_var_assignment_operators.menu.+=":"+=",
@@ -10,7 +10,7 @@
 "nhjr.more_var_assignment_operators.menu.String":"String","nhjr.more_var_assignment_operators.menu.Boolean":"Boolean",
 "nhjr.more_var_assignment_operators.menu.ScratchBoolean":"ScratchBoolean",
 
-"nhjr.more_var_assignment_operators": "更多变量赋值符",
+"nhjr.more_var_assignment_operators": "more variable assignment operators",
 "nhjr.more_var_assignment_operators.setVar":"set variable[VARID][OPERATOR][IN_TYPE]([VALUE])",
 "nhjr.more_var_assignment_operators.setList":"set list[VARID]item[ITEM][OPERATOR][IN_TYPE]([VALUE])",
 "nhjr.more_var_assignment_operators.setVar_NaN_fixMode":"variable NaN fix mode set [VALUE]",
