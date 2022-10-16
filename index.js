@@ -115,7 +115,6 @@ module.exports= class E extends Extension {
 
 
     addBlocks(LIST){
-        console.log(LIST);
         for(const i in LIST){
             const [in_opc,in_type,in_Func,in_param]= LIST[i];
             const opc= catId +'.'+ in_opc ;
